@@ -72,7 +72,7 @@ function createRock(x) {
    * Now that we have a rock, we'll need to append
    * it to GAME and move it downwards.
    */
-   GAME.append(rock)
+   GAME.appendChild(rock)
    //rockMovementInterval = setInterval(moveRock, 1000)
 
 
@@ -147,8 +147,12 @@ function moveDodger(e) {
    */
    
    if ( parseInt(e.which) === LEFT_ARROW ) {
+     e.preventDefault()
+     e.stopPropagation()
      moveDodgerLeft()
    } else if ( parseInt(e.which) === RIGHT_ARROW ) {
+     e.preventDefault()
+     e.stopPropagation()
      moveDodgerRight()
    }
 }
@@ -162,7 +166,9 @@ function moveDodgerLeft() {
   var left = parseInt(DODGER.style.left);
 
   function step() {
-    DODGER.style.left = `${left -= 4}px`
+    if (left > 0) {
+      DODGER.style.left = `${left -= 4}px`
+    }
   }
    
    window.requestAnimationFrame(step)
