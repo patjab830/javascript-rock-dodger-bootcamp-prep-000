@@ -88,7 +88,7 @@ function createRock(x) {
      * Otherwise, if the rock hasn't reached the bottom of
      * the GAME, we want to move it again.
      */
-     if ( top !== GAME_HEIGHT ) {
+     if ( top < GAME_HEIGHT ) {
        top += 2
        rock.style.top = top
      } else {
