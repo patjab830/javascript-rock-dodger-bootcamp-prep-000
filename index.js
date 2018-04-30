@@ -67,6 +67,7 @@ function createRock(x) {
    * it to GAME and move it downwards.
    */
    GAME.append(rock)
+   const myInterval = setInterval(moveRock, 1000)
 
 
   /**
