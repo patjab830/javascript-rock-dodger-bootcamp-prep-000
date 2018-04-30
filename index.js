@@ -126,7 +126,7 @@ function createRock(x) {
  * Finally, alert "YOU LOSE!" to the player.
  */
 function endGame() {
-  gameInterval = null
+  clearInterval(gameInterval)
   const rockDOM = document.querySelectorAll(".rock")
   for ( var i = 0; i < rockDOM.length; i++ ) {
     rockDOM[i].remove()
