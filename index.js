@@ -184,7 +184,7 @@ function moveDodgerRight() {
    var left = parseInt(DODGER.style.left)
    
    function step() {
-     if (left+4 <= GAME_WIDTH) {
+     if (left+40+4 < GAME_WIDTH) {
       DODGER.style.left = `${left += 4}px`
      }
    }
