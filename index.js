@@ -127,9 +127,9 @@ function createRock(x) {
  */
 function endGame() {
   gameInterval = null
-  const rockDOM = document.querySelector(".rock")
+  const rockDOM = document.querySelectorAll(".rock")
   for ( var i = 0; i < rockDOM.length; i++ ) {
-    rockDOM.remove()
+    rockDOM[i].remove()
   }
   window.removeEventListener('keydown', moveDodger)
   alert("YOU LOSE!")
