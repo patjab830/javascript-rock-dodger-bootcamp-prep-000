@@ -108,8 +108,13 @@ function createRock(x) {
  * Finally, alert "YOU LOSE!" to the player.
  */
 function endGame() {
+  gameInterval = null
+  for ( var i = 0; i < ROCKS.length; i++ ) {
+    ROCKS.pop()
+  }
+  window.removeEventListener('keydown', moveDodger)
+  alert("YOU LOSE!")
   
-  alert("YOU LOSE!");
 }
 
 function moveDodger(e) {
@@ -123,9 +128,9 @@ function moveDodger(e) {
    */
    
    if ( parseInt(e.which) === LEFT_ARROW ) {
-     moveDodgerLeft();
+     moveDodgerLeft()
    } else if ( parseInt(e.which) === RIGHT_ARROW ) {
-     moveDodgerRight();
+     moveDodgerRight()
    }
 }
 
@@ -138,10 +143,10 @@ function moveDodgerLeft() {
   var left = parseInt(DODGER.style.left);
 
   function step() {
-    DODGER.style.left = `${left -= 4}px`;
+    DODGER.style.left = `${left -= 4}px`
   }
    
-   window.requestAnimationFrame(step);
+   window.requestAnimationFrame(step)
 }
 
 function moveDodgerRight() {
@@ -151,13 +156,13 @@ function moveDodgerRight() {
    * (mabye 4 pixels?). Use window.requestAnimationFrame()!
    */
    
-   var left = parseInt(DODGER.style.left);
+   var left = parseInt(DODGER.style.left)
    
    function step() {
-     DODGER.style.left = `${left += 4}px`;
+     DODGER.style.left = `${left += 4}px`
    }
    
-   window.requestAnimationFrame(step);
+   window.requestAnimationFrame(step)
 }
 
 /**
