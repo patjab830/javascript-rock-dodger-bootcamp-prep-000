@@ -95,8 +95,7 @@ function createRock(x) {
      
      
      if ( top < GAME_HEIGHT ) {
-       top += 2
-       rock.style.top = top
+       rock.style.top = `${top += 2}px`
        window.requestAnimationFrame(moveRock)
      } else {
        rock.remove()
