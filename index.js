@@ -93,6 +93,7 @@ function createRock(x) {
        endGame()
      }
      
+     
      if ( top < GAME_HEIGHT ) {
        top += 2
        rock.style.top = top
