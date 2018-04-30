@@ -108,6 +108,8 @@ function createRock(x) {
  * Finally, alert "YOU LOSE!" to the player.
  */
 function endGame() {
+  
+  alert("YOU LOSE!");
 }
 
 function moveDodger(e) {
@@ -119,6 +121,12 @@ function moveDodger(e) {
    * we've declared for you above.)
    * And be sure to use the functions declared below!
    */
+   
+   if ( parseInt(e.which) === LEFT_ARROW ) {
+     moveDodgerLeft();
+   } else if ( parseInt(e.which) === RIGHT_ARROW ) {
+     moveDodgerRight();
+   }
 }
 
 function moveDodgerLeft() {
@@ -127,6 +135,13 @@ function moveDodgerLeft() {
    * This function should move DODGER to the left
    * (mabye 4 pixels?). Use window.requestAnimationFrame()!
    */
+  var left = parseInt(DODGER.style.left);
+
+  function step() {
+    DODGER.style.left = `${left -= 4}px`;
+  }
+   
+   window.requestAnimationFrame(step);
 }
 
 function moveDodgerRight() {
@@ -135,6 +150,14 @@ function moveDodgerRight() {
    * This function should move DODGER to the right
    * (mabye 4 pixels?). Use window.requestAnimationFrame()!
    */
+   
+   var left = parseInt(DODGER.style.left);
+   
+   function step() {
+     DODGER.style.left = `${left += 4}px`;
+   }
+   
+   window.requestAnimationFrame(step);
 }
 
 /**
