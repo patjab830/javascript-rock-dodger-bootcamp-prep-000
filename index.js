@@ -77,7 +77,7 @@ function createRock(x) {
   function moveRock() {
     // implement me!
     // (use the comments below to guide you!)
-    top += 2
+    top = top - 2
     rock.style.top = top
     
     
